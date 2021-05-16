@@ -60,9 +60,7 @@ class Matrix {
   virtual void MatImport(T *arr) = 0;
 
   // TODO(P0): Add implementation
-  virtual ~Matrix() {
-      delete[] linear;
-  }
+  virtual ~Matrix() { delete[] linear; }
 };
 
 template <typename T>
@@ -106,7 +104,7 @@ class RowMatrix : public Matrix<T> {
 
   // TODO(P0): Add implementation
   void MatImport(T *arr) override {
-    if (arr){
+    if (arr) {
       for (int i = 0; i < Matrix<T>::rows; i++) {
         for (int j = 0; j < Matrix<T>::cols; j++) {
           SetElem(i, j, arr[i * Matrix<T>::cols + j]);
@@ -116,9 +114,7 @@ class RowMatrix : public Matrix<T> {
   }
 
   // TODO(P0): Add implementation
-  ~RowMatrix() override {
-      delete[] data_;
-  }
+  ~RowMatrix() override { delete[] data_; }
 
  private:
   // 2D array containing the elements of the matrix in row-major format

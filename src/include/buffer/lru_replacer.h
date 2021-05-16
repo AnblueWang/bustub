@@ -15,7 +15,6 @@
 #include <list>
 #include <mutex>  // NOLINT
 #include <vector>
-#include <assert.h>
 
 #include "buffer/replacer.h"
 #include "common/config.h"
