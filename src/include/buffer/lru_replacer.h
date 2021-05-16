@@ -15,6 +15,7 @@
 #include <list>
 #include <mutex>  // NOLINT
 #include <vector>
+#include <assert.h>
 
 #include "buffer/replacer.h"
 #include "common/config.h"
@@ -46,7 +47,11 @@ class LRUReplacer : public Replacer {
   size_t Size() override;
 
  private:
-  // TODO(student): implement me!
+  std::vector<int> lru_frame_list;
+  size_t track_size;
+  size_t manager_size;
+  size_t list_pointer;
+  std::mutex list_mutex;
 };
 
 }  // namespace bustub
